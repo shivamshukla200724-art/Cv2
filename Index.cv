@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Shukla | Video Editor & Copywriter</title>
+  <meta name="description" content="Shivam Shukla - Video Editor & Copywriter from Rewa, MP. Portfolio website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0f;
+      --panel:#12131a;
+      --panel-2:#171923;
+      --text:#f5f7fb;
+      --muted:#9aa3b2;
+      --line:#232635;
+      --brand:#7c5cff;
+      --brand-2:#38bdf8;
+      --accent:#ec4899;
+      --success:#22c55e;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,Arial,sans-serif;
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(124,92,255,.16), transparent 60%),
+        radial-gradient(800px 500px at 100% 0%, rgba(56,189,248,.12), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(var(--max), calc(100% - 32px));margin:auto}
+    .section{padding:88px 0}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--brand-2);margin-bottom:14px
+    }
+    .title{
+      font-size:clamp(30px, 5vw, 52px);
+      line-height:1.08;font-weight:800;letter-spacing:-.03em;
+      margin-bottom:16px
+    }
+    .sub{
+      color:var(--muted);max-width:720px
+    }
+    .grad{
+      background:linear-gradient(135deg,var(--brand-2),var(--brand),var(--accent));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow)
+    }
+
+    /* nav */
+    .nav{
+      position:sticky;top:0;z-index:1000;
+      backdrop-filter: blur(14px);
+      background:rgba(10,10,15,.72);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-wrap{
+      height:72px;display:flex;align-items:center;justify-content:space-between
+    }
+    .logo{
+      font-weight:800;font-size:28px;letter-spacing:-.04em
+    }
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{color:var(--muted);font-weight:600;font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:14px;padding:14px 22px;font-weight:700;
+      border:1px solid transparent;transition:.2s ease
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      box-shadow:0 8px 24px rgba(124,92,255,.28)
+    }
+    .btn-secondary{
+      color:var(--text);border-color:var(--line);background:rgba(255,255,255,.02)
+    }
+
+    /* hero */
+    .hero{padding:70px 0 40px}
+    .hero-grid{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center
+    }
+    .hero-copy .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      color:#c7d2fe;background:rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.25);
+      padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700
+    }
+    .hero-copy h1{
+      font-size:clamp(36px, 7vw, 68px);
+      line-height:1.02;letter-spacing:-.05em;font-weight:800;
+      margin:16px 0 12px
+    }
+    .hero-copy h2{
+      font-size:clamp(18px, 2vw, 24px);
+      color:#dbe4f3;font-weight:600;margin-bottom:16px
+    }
+    .hero-copy p{
+      color:var(--muted);font-size:17px;max-width:700px
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .hero-stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px
+    }
+    .stat{
+      padding:18px;border-radius:18px;border:1px solid var(--line);
+      background:rgba(255,255,255,.02)
+    }
+    .stat .n{font-size:28px;font-weight:800}
+    .stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+    .hero-visual{padding:22px}
+    .profile-shell{
+      position:relative;border-radius:28px;padding:18px;
+      background:
+        linear-gradient(135deg, rgba(124,92,255,.3), rgba(56,189,248,.18), rgba(236,72,153,.2));
+    }
+    .profile-card{
+      background:#0d0f15;border:1px solid rgba(255,255,255,.06);
+      border-radius:24px;padding:18px
+    }
+    .photo{
+      aspect-ratio:1/1;border-radius:22px;overflow:hidden;
+      border:1px solid rgba(255,255,255,.08)
+    }
+    .mini{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px
+    }
+    .mini .tile{
+      padding:14px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--line)
+    }
+    .mini .tile strong{display:block;font-size:14px}
+    .mini .tile span{font-size:12px;color:var(--muted)}
+
+    /* grids */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+    /* about */
+    .about-card{padding:26px}
+    .about-card p{color:var(--muted);margin-top:12px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{
+      padding:10px 14px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.03);
+      color:#dbe4f3;font-size:13px;font-weight:600
+    }
+
+    /* skills */
+    .skill-card{padding:22px}
+    .skill-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .skill-title{font-size:18px;font-weight:700}
+    .skill-desc{font-size:14px;color:var(--muted);margin-bottom:14px}
+    .bar{
+      height:10px;border-radius:999px;background:#1d2030;overflow:hidden;border:1px solid #272a3b
+    }
+    .bar > span{
+      display:block;height:100%;
+      background:linear-gradient(90deg,var(--brand-2),var(--brand),var(--accent));
+      border-radius:999px
+    }
+
+    /* projects */
+    .project{overflow:hidden}
+    .project-media{
+      aspect-ratio:16/10;
+      background:linear-gradient(135deg,#172036,#1a1430);
+      border-bottom:1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;
+      font-size:42px
+    }
+    .project-body{padding:22px}
+    .project-body h3{font-size:20px;margin-bottom:8px}
+    .project-body p{color:var(--muted);font-size:14px}
+    .project-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .project-tags span{
+      font-size:12px;padding:8px 12px;border-radius:999px;
+      background:rgba(124,92,255,.10);border:1px solid rgba(124,92,255,.18);color:#d9d4ff
+    }
+
+    /* services */
+    .service{padding:24px}
+    .service h3{margin:10px 0 8px;font-size:20px}
+    .service p{color:var(--muted);font-size:14px}
+    .service ul{margin-top:14px;padding-left:18px}
+    .service li{color:#dbe4f3;font-size:14px;margin:6px 0}
+    .price{
+      margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+      font-weight:800;color:#fff
+    }
+
+    /* timeline */
+    .timeline{position:relative;padding-left:26px}
+    .timeline:before{
+      content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+      background:linear-gradient(var(--brand-2),var(--brand),var(--accent))
+    }
+    .t-item{position:relative;margin-bottom:18px}
+    .t-item:before{
+      content:"";position:absolute;left:-26px;top:18px;width:14px;height:14px;
+      border-radius:50%;background:var(--brand);border:3px solid #0f1118
+    }
+    .t-card{padding:20px}
+    .t-date{
+      display:inline-block;padding:7px 12px;border-radius:999px;
+      background:rgba(56,189,248,.10);border:1px solid rgba(56,189,248,.16);
+      color:#a5e3ff;font-size:12px;font-weight:700;margin-bottom:10px
+    }
+    .t-card h3{font-size:18px;margin-bottom:8px}
+    .t-card p{color:var(--muted);font-size:14px}
+
+    /* trust */
+    .trust .card{padding:22px}
+    .trust h3{font-size:18px;margin-bottom:8px}
+    .trust p{color:var(--muted);font-size:14px}
+
+    /* contact */
+    .contact-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px}
+    .contact-card{padding:24px}
+    .contact-list{display:grid;gap:14px;margin-top:18px}
+    .contact-item{
+      display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:16px;
+      background:rgba(255,255,255,.025);border:1px solid var(--line)
+    }
+    .contact-item b{display:block}
+    .contact-item span{color:var(--muted);font-size:14px}
+    .cta-panel{padding:26px}
+    .cta-panel p{color:var(--muted);margin:10px 0 18px}
+
+    footer{
+      padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)
+    }
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    @media (max-width: 940px){
+      .hero-grid,.contact-wrap,.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .hero{padding-top:36px}
+      .hero-stats{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <a href="#home" class="logo"><span class="grad">SS</span><span style="color:#6b7280">.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 16px">Hire Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Available for freelance work</div>
+        <h1>Shivam <span class="grad">Shukla</span></h1>
+        <h2>Video Editor & Copywriter</h2>
+        <p>
+          I help creators and brands improve their online presence through engaging video edits,
+          clear messaging, and persuasive copy. I'm currently focused on building premium-quality
+          work while growing as a first-year student.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Let's Work Together</a>
+          <a class="btn btn-secondary" href="#projects">View My Work</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat card">
+            <div class="n">2026</div>
+            <div class="l">Journey Started</div>
+          </div>
+          <div class="stat card">
+            <div class="n">2+</div>
+            <div class="l">Core Skills</div>
+          </div>
+          <div class="stat card">
+            <div class="n">100%</div>
+            <div class="l">Commitment</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual card">
+        <div class="profile-shell">
+          <div class="profile-card">
+            <div class="photo">
+              <img src="https://i.ibb.co/7dsdVb6R/B612-20260708-172103-892.jpg" alt="Shivam Shukla photo">
+            </div>
+            <div class="mini">
+              <div class="tile">
+                <strong>Location</strong>
+                <span>Rewa, MP</span>
+              </div>
+              <div class="tile">
+                <strong>Status</strong>
+                <span>Open to Work</span>
+              </div>
+              <div class="tile">
+                <strong>Focus</strong>
+                <span>Video + Copy</span>
+              </div>
+              <div class="tile">
+                <strong>Goal</strong>
+                <span>Financial Independence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="tag">About Me</div>
+      <h2 class="title">Building skills with a <span class="grad">long-term mindset</span></h2>
+      <p class="sub">
+        I'm Shivam Shukla, a first-year student from Rewa, Madhya Pradesh. I'm focused on learning
+        practical digital skills that create real value — especially video editing and copywriting.
+      </p>
+
+      <div class="grid-2" style="margin-top:28px">
+        <div class="about-card card">
+          <h3 style="font-size:22px;margin-bottom:10px">What I bring</h3>
+          <p>
+            I combine creativity with discipline. My approach is simple: learn fast, improve consistently,
+            and deliver work that looks clean, modern, and useful for clients.
+          </p>
+          <div class="chips">
+            <span class="chip">Video Editing</span>
+            <span class="chip">Copywriting</span>
+            <span class="chip">Content Strategy</span>
+            <span class="chip">Creative Thinking</span>
+            <span class="chip">Fast Learner</span>
+          </div>
+        </div>
+
+        <div class="about-card card">
+          <h3 style="font-size:22px;margin-bottom:10px">My goal</h3>
+          <p>
+            My mission is to become financially independent by building digital skills and working on
+            real projects. I'm serious about growth, deadlines, and improving my work every day.
+          </p>
+          <div class="chips">
+            <span class="chip">Freelance Ready</span>
+            <span class="chip">Beginner-Friendly Pricing</span>
+            <span class="chip">Clear Communication</span>
+            <span class="chip">Long-Term Growth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="tag">Skills</div>
+      <h2 class="title">Core skills & <span class="grad">growing strengths</span></h2>
+      <p class="sub">I'm still early in my journey, but I’m focused on building real, practical ability.</p>
+
+      <div class="grid-2" style="margin-top:28px">
+        <div class="skill-card card">
+          <div class="skill-head">
+            <div>
+              <div class="skill-title">Video Editing</div>
+              <div class="skill-desc">Reels, shorts, basic storytelling, pacing, transitions and visual polish.</div>
+            </div>
+            <strong>45%</strong>
+          </div>
+          <div class="bar"><span style="width:45%"></span></div>
+        </div>
+
+        <div class="skill-card card">
+          <div class="skill-head">
+            <div>
+              <div class="skill-title">Copywriting</div>
+              <div class="skill-desc">Captions, ad-style copy, hooks, short scripts and attention-grabbing text.</div>
+            </div>
+            <strong>40%</strong>
+          </div>
+          <div class="bar"><span style="width:40%"></span></div>
+        </div>
+
+        <div class="skill-card card">
+          <div class="skill-head">
+            <div>
+              <div class="skill-title">Creative Thinking</div>
+              <div class="skill-desc">Generating content ideas and improving how a message is presented.</div>
+            </div>
+            <strong>80%</strong>
+          </div>
+          <div class="bar"><span style="width:80%"></span></div>
+        </div>
+
+        <div class="skill-card card">
+          <div class="skill-head">
+            <div>
+              <div class="skill-title">Consistency & Work Ethic</div>
+              <div class="skill-desc">The biggest advantage I bring is hunger to learn and commitment to improve.</div>
+            </div>
+            <strong>100%</strong>
+          </div>
+          <div class="bar"><span style="width:100%"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="tag">Portfolio</div>
+      <h2 class="title">Selected <span class="grad">sample work</span></h2>
+      <p class="sub">You can replace these with your real edits, reels, captions, or client work later.</p>
+
+      <div class="grid-3" style="margin-top:28px">
+        <article class="project card">
+          <div class="project-media">🎬</div>
+          <div class="project-body">
+            <h3>Short Form Reel Edit</h3>
+            <p>
+              A fast-paced reel concept focused on smooth cuts, attention-grabbing opening,
+              and clean subtitle placement for better retention.
+            </p>
+            <div class="project-tags">
+              <span>Reels</span><span>Transitions</span><span>Subtitles</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="project-media">✍️</div>
+          <div class="project-body">
+            <h3>Social Media Caption Set</h3>
+            <p>
+              Sample caption writing focused on clarity, hooks, and audience engagement for
+              personal brands or small businesses.
+            </p>
+            <div class="project-tags">
+              <span>Captions</span><span>Hooks</span><span>CTA</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="project-media">📣</div>
+          <div class="project-body">
+            <h3>Basic Content Strategy Sample</h3>
+            <p>
+              A simple content plan showing how ideas, messaging, and posting direction can
+              be structured for growth.
+            </p>
+            <div class="project-tags">
+              <span>Ideas</span><span>Planning</span><span>Brand Voice</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <div class="tag">Services</div>
+      <h2 class="title">What I can <span class="grad">help with</span></h2>
+      <p class="sub">Starter-friendly services for creators, students, and small brands.</p>
+
+      <div class="grid-3" style="margin-top:28px">
+        <div class="service card">
+          <h3>Video Editing</h3>
+          <p>Short-form and simple long-form editing focused on clean presentation.</p>
+          <ul>
+            <li>Reels and Shorts editing</li>
+            <li>Basic transitions and pacing</li>
+            <li>Subtitles and simple text overlays</li>
+          </ul>
+          <div class="price">Starting from ₹500</div>
+        </div>
+
+        <div class="service card">
+          <h3>Copywriting</h3>
+          <p>Short-form copy that helps content sound sharper and more persuasive.</p>
+          <ul>
+            <li>Captions and hooks</li>
+            <li>Ad-style text</li>
+            <li>Simple product or promo copy</li>
+          </ul>
+          <div class="price">Starting from ₹300</div>
+        </div>
+
+        <div class="service card">
+          <h3>Content Support</h3>
+          <p>Basic help with ideas, message direction and structure for content creators.</p>
+          <ul>
+            <li>Content topic ideas</li>
+            <li>Simple posting direction</li>
+            <li>Brand tone improvement</li>
+          </ul>
+          <div class="price">Custom discussion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="section">
+    <div class="container">
+      <div class="tag">Journey</div>
+      <h2 class="title">The <span class="grad">road so far</span></h2>
+
+      <div class="timeline" style="margin-top:28px">
+        <div class="t-item">
+          <div class="t-card card">
+            <div class="t-date">2026 - Present</div>
+            <h3>Started College</h3>
+            <p>Began college while actively building skills for long-term financial independence.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-card card">
+            <div class="t-date">2026</div>
+            <h3>Started Video Editing</h3>
+            <p>Began learning editing basics like pacing, trimming, transitions, and short-form structure.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-card card">
+            <div class="t-date">2026</div>
+            <h3>Discovered Copywriting</h3>
+            <p>Started understanding how strong words, hooks, and messaging influence attention and action.</p>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-card card">
+            <div class="t-date">Coming Soon</div>
+            <h3>Working with Clients</h3>
+            <p>Next goal: build a strong portfolio through real projects, better work, and client results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section trust">
+    <div class="container">
+      <div class="tag">Why Work With Me</div>
+      <h2 class="title">A few reasons I’m a <span class="grad">strong choice</span></h2>
+
+      <div class="grid-4" style="margin-top:28px">
+        <div class="card">
+          <h3>Committed</h3>
+          <p>I may be early in my journey, but I take improvement seriously and stay consistent.</p>
+        </div>
+        <div class="card">
+          <h3>Affordable</h3>
+          <p>Great for creators or small brands who want quality work at starter-friendly pricing.</p>
+        </div>
+        <div class="card">
+          <h3>Creative</h3>
+          <p>I focus on content that looks cleaner, sounds sharper, and connects better.</p>
+        </div>
+        <div class="card">
+          <h3>Easy to Work With</h3>
+          <p>Clear communication, respectful collaboration, and strong willingness to learn fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="tag">Contact</div>
+      <h2 class="title">Let’s build something <span class="grad">worth sharing</span></h2>
+      <p class="sub">If you need editing, copy, or content support, feel free to reach out.</p>
+
+      <div class="contact-wrap" style="margin-top:28px">
+        <div class="contact-card card">
+          <h3 style="font-size:24px">Get in touch</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>📧</div>
+              <div>
+                <b>Email</b>
+                <span>shivamshukla242007@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div>📞</div>
+              <div>
+                <b>Phone</b>
+                <span>+91 887832XXXX</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div>📍</div>
+              <div>
+                <b>Location</b>
+                <span>Rewa, Madhya Pradesh</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-panel card">
+          <h3 style="font-size:24px">Ready to collaborate?</h3>
+          <p>
+            I’m currently open to freelance opportunities and practice-based projects.
+            The best way to contact me right now is by email.
+          </p>
+          <a href="mailto:shivamshukla242007@gmail.com" class="btn btn-primary">Email Me Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>© 2026 Shivam Shukla</div>
+      <div>Built with focus, growth, and consistency.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
