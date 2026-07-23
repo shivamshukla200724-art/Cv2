@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Shukla | Video Editor & Copywriter</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Arial,Helvetica,sans-serif;background:#0a0a0a;color:#e0e0e0;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+.g-text{background:linear-gradient(135deg,#3b82f6,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.container{max-width:1150px;margin:0 auto;padding:0 20px;}
+
+.navbar{position:fixed;top:0;width:100%;z-index:100;padding:15px 20px;background:rgba(10,10,10,0.95);border-bottom:1px solid #1f2937;backdrop-filter:blur(20px);}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1150px;margin:0 auto;}
+.logo{font-size:26px;font-weight:800;}
+.nav-links{display:flex;gap:18px;align-items:center;}
+.nav-links a{color:#9ca3af;font-size:14px;transition:color 0.3s;}
+.nav-links a:hover{color:#fff;}
+.hire-btn{background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff !important;padding:9px 22px;border-radius:50px;font-weight:600;}
+@media(max-width:768px){.nav-links{display:none;}}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 20px 50px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:20%;left:10%;width:300px;height:300px;background:#3b82f6;border-radius:50%;filter:blur(140px);opacity:0.18;}
+.hero::after{content:'';position:absolute;bottom:20%;right:10%;width:300px;height:300px;background:#ec4899;border-radius:50%;filter:blur(140px);opacity:0.18;}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1150px;margin:0 auto;position:relative;z-index:2;}
+.tag-line{color:#60a5fa;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px;font-weight:600;}
+.hero h1{font-size:54px;font-weight:800;color:#fff;line-height:1.1;}
+.hero .role{font-size:20px;color:#fff;font-weight:600;margin:15px 0;}
+.hero p{color:#9ca3af;margin:20px 0 30px;max-width:480px;font-size:15px;}
+.btns{display:flex;gap:15px;flex-wrap:wrap;}
+.btn1{background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;transition:all 0.3s;box-shadow:0 10px 30px rgba(59,130,246,0.3);}
+.btn1:hover{transform:translateY(-3px);}
+.btn2{border:1px solid #374151;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;transition:all 0.3s;}
+.btn2:hover{background:#111;transform:translateY(-3px);}
+.stats{display:flex;gap:25px;margin-top:35px;flex-wrap:wrap;}
+.stat{text-align:center;}
+.stat .num{font-size:28px;font-weight:800;color:#fff;display:block;}
+.stat .lbl{font-size:11px;color:#6b7280;}
+.circle{width:270px;height:270px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#a855f7,#ec4899);padding:5px;margin:0 auto;animation:float 4s ease-in-out infinite;box-shadow:0 20px 60px rgba(168,85,247,0.3);}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.circle-in{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;}
+.circle-in img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
+.status{position:absolute;bottom:15px;right:-10px;background:#0a0a0a;border:1px solid rgba(34,197,94,0.4);border-radius:50px;padding:6px 14px;display:flex;align-items:center;gap:7px;font-size:12px;}
+.status .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:blink 1.5s infinite;}
+@keyframes blink{50%{opacity:0.3}}
+.status span{color:#22c55e;font-weight:500;}
+@media(max-width:768px){
+.hero-content{grid-template-columns:1fr;text-align:center;}
+.hero h1{font-size:36px;}
+.hero p{margin:20px auto 30px;}
+.btns,.stats{justify-content:center;}
+.circle{width:200px;height:200px;margin-bottom:30px;}
+}
+
+section{padding:90px 20px;position:relative;}
+.s-label{color:#60a5fa;font-size:12px;letter-spacing:3px;text-transform:uppercase;text-align:center;font-weight:600;margin-bottom:10px;}
+.s-title{font-size:34px;color:#fff;text-align:center;font-weight:700;margin-bottom:50px;}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+.code-box{background:linear-gradient(135deg,#0d0d0d,#111);border:1px solid #1f2937;border-radius:16px;padding:28px;font-family:monospace;font-size:13px;line-height:1.9;box-shadow:0 20px 50px rgba(0,0,0,0.3);}
+.cm{color:#4b5563;}.kw{color:#c084fc;}.vr{color:#93c5fd;}.pr{color:#6ee7b7;}.st{color:#fde68a;}
+.about-txt h2{font-size:30px;color:#fff;margin-bottom:18px;line-height:1.3;}
+.about-txt p{color:#9ca3af;margin-bottom:14px;font-size:14.5px;}
+.about-txt strong{color:#fff;}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px;}
+.info-c{background:#111;border:1px solid #1f2937;border-radius:12px;padding:15px;transition:all 0.3s;}
+.info-c:hover{transform:translateY(-3px);border-color:#3b82f6;}
+.info-c i{font-size:18px;margin-bottom:6px;display:block;}
+.info-c .il{font-size:11px;color:#6b7280;}
+.info-c .iv{color:#fff;font-weight:600;font-size:13px;}
+@media(max-width:768px){.about{grid-template-columns:1fr;}}
+
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.sk-card{background:#111;border:1px solid #1f2937;border-radius:16px;padding:28px;margin-bottom:20px;transition:all 0.3s;}
+.sk-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,0.3);}
+.sk-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.sk-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;}
+.ic-p{background:linear-gradient(135deg,#9333ea,#ec4899);}
+.ic-b{background:linear-gradient(135deg,#2563eb,#06b6d4);}
+.sk-name{font-size:18px;font-weight:700;color:#fff;}
+.sk-sub{font-size:12px;color:#6b7280;}
+.sk-card p{color:#9ca3af;font-size:13.5px;margin-bottom:14px;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.tg{padding:5px 13px;border-radius:50px;font-size:11px;background:rgba(59,130,246,0.1);color:#93c5fd;border:1px solid rgba(59,130,246,0.2);}
+.pbar{width:100%;height:8px;background:#1f2937;border-radius:10px;overflow:hidden;}
+.pfill{height:100%;border-radius:10px;}
+.f-p{background:linear-gradient(90deg,#9333ea,#ec4899);}
+.f-b{background:linear-gradient(90deg,#2563eb,#06b6d4);}
+.f-y{background:linear-gradient(90deg,#eab308,#f97316);}
+.f-g{background:linear-gradient(90deg,#22c55e,#10b981);}
+.f-r{background:linear-gradient(90deg,#ef4444,#ec4899);}
+.f-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed);}
+.oth h3{font-size:18px;color:#fff;margin-bottom:22px;}
+.bar{margin-bottom:18px;}
+.bar-top{display:flex;justify-content:space-between;margin-bottom:7px;font-size:13px;color:#d1d5db;}
+.tools{background:#111;border:1px solid #1f2937;border-radius:16px;padding:22px;margin-top:30px;}
+.tools h4{font-size:13px;color:#fff;margin-bottom:14px;}
+.tool-list{display:flex;flex-wrap:wrap;gap:10px;}
+.tool{background:#1a1a1a;border:1px solid #262626;padding:8px 15px;border-radius:10px;font-size:13px;color:#d1d5db;transition:all 0.3s;}
+.tool:hover{border-color:#3b82f6;transform:translateY(-2px);}
+@media(max-width:768px){.skills{grid-template-columns:1fr;}}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.srv{background:#111;border:1px solid #1f2937;border-radius:16px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden;}
+.srv::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#3b82f6,#a855f7,#ec4899);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.srv:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+.srv:hover::before{transform:scaleX(1);}
+.srv-ic{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;margin-bottom:18px;}
+.si-p{background:linear-gradient(135deg,#9333ea,#ec4899);}
+.si-b{background:linear-gradient(135deg,#2563eb,#06b6d4);}
+.si-o{background:linear-gradient(135deg,#ea580c,#f59e0b);}
+.srv h3{font-size:18px;color:#fff;margin-bottom:10px;}
+.srv p{font-size:13.5px;color:#9ca3af;margin-bottom:14px;}
+.srv li{font-size:13px;color:#d1d5db;padding:4px 0;}
+.srv li i{color:#22c55e;font-size:11px;margin-right:8px;}
+@media(max-width:768px){.services{grid-template-columns:1fr;}}
+
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;}
+.work-card{background:#111;border:1px solid #1f2937;border-radius:16px;overflow:hidden;transition:all 0.3s;}
+.work-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+.work-thumb{height:200px;background:linear-gradient(135deg,#3b82f6,#a855f7);display:flex;align-items:center;justify-content:center;font-size:50px;color:#fff;position:relative;overflow:hidden;}
+.work-thumb::before{content:'▶';position:absolute;font-size:60px;background:rgba(0,0,0,0.5);width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding-left:8px;}
+.work-info{padding:20px;}
+.work-info .tag{display:inline-block;padding:3px 10px;background:rgba(59,130,246,0.1);color:#60a5fa;font-size:11px;border-radius:50px;margin-bottom:10px;border:1px solid rgba(59,130,246,0.2);}
+.work-info h3{color:#fff;font-size:16px;margin-bottom:8px;}
+.work-info p{color:#9ca3af;font-size:13px;margin-bottom:12px;}
+.work-info a{color:#60a5fa;font-size:13px;font-weight:600;}
+.work-info a:hover{text-decoration:underline;}
+@media(max-width:768px){.work-grid{grid-template-columns:1fr;}}
+
+.showreel-wrap{max-width:750px;margin:0 auto;text-align:center;}
+.video-frame{position:relative;padding-bottom:177.77%;height:0;overflow:hidden;border-radius:20px;background:linear-gradient(135deg,#1a1a1a,#0d0d0d);box-shadow:0 30px 60px rgba(0,0,0,0.5);border:2px solid #1f2937;}
+.video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:rgba(0,0,0,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.2);pointer-events:none;}
+.play-badge i{color:#fff;font-size:24px;padding-left:5px;}
+.showreel-features{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px;}
+.sf-card{background:#111;border:1px solid #1f2937;border-radius:50px;padding:10px 20px;display:flex;align-items:center;gap:8px;font-size:13px;color:#d1d5db;transition:all 0.3s;}
+.sf-card:hover{transform:translateY(-3px);border-color:#3b82f6;}
+.sf-card i{color:#60a5fa;font-size:14px;}
+.showreel-btn{display:inline-flex;align-items:center;gap:10px;margin-top:35px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:14px;transition:all 0.3s;box-shadow:0 10px 30px rgba(255,0,0,0.3);}
+.showreel-btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,0,0,0.4);}
+.showreel-btn i{font-size:18px;}
+
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.price-card{background:#111;border:1px solid #1f2937;border-radius:16px;padding:32px;position:relative;transition:all 0.3s;}
+.price-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
+.price-card.popular{border-color:#a855f7;background:linear-gradient(135deg,rgba(168,85,247,0.08),rgba(236,72,153,0.05));}
+.badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff;font-size:10px;padding:5px 14px;border-radius:50px;font-weight:700;letter-spacing:1px;}
+.price-card h3{color:#fff;font-size:20px;margin-bottom:8px;}
+.price{font-size:42px;font-weight:800;color:#fff;margin-bottom:5px;}
+.price span{font-size:14px;color:#6b7280;font-weight:400;}
+.price-desc{color:#9ca3af;font-size:13px;margin-bottom:20px;}
+.price-card ul{margin-bottom:25px;min-height:140px;}
+.price-card li{padding:7px 0;color:#d1d5db;font-size:13px;}
+.price-card li i{color:#22c55e;font-size:11px;margin-right:8px;}
+.price-btn{display:block;text-align:center;background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff;padding:13px;border-radius:10px;font-weight:700;transition:opacity 0.3s;}
+.price-btn:hover{opacity:0.85;}
+@media(max-width:768px){.price-grid{grid-template-columns:1fr;}.price-card.popular{transform:none;}}
+
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.why-card{background:#111;border:1px solid #1f2937;border-radius:16px;padding:25px;text-align:center;transition:all 0.3s;}
+.why-card:hover{transform:translateY(-5px);border-color:#3b82f6;}
+.why-icon{width:55px;height:55px;border-radius:14px;background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(168,85,247,0.2));display:flex;align-items:center;justify-content:center;font-size:22px;color:#60a5fa;margin:0 auto 15px;}
+.why-card h4{color:#fff;font-size:15px;margin-bottom:8px;}
+.why-card p{color:#9ca3af;font-size:12.5px;}
+@media(max-width:768px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto;}
+.test-card{background:#111;border:1px solid #1f2937;border-radius:16px;padding:28px;position:relative;}
+.test-card::before{content:'"';position:absolute;top:-20px;left:20px;font-size:80px;color:#3b82f6;opacity:0.2;line-height:1;font-family:Georgia;}
+.stars{color:#fbbf24;font-size:14px;margin-bottom:12px;}
+.test-card p{color:#d1d5db;font-style:italic;margin-bottom:15px;font-size:14.5px;line-height:1.7;}
+.test-author{display:flex;align-items:center;gap:12px;}
+.author-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#a855f7);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;}
+.test-author strong{color:#fff;display:block;font-size:14px;}
+.test-author span{color:#6b7280;font-size:12px;}
+@media(max-width:768px){.test-grid{grid-template-columns:1fr;}}
+
+.timeline{position:relative;padding-left:28px;max-width:700px;margin:0 auto;}
+.timeline::before{content:'';position:absolute;left:0;top:0;width:3px;height:100%;background:linear-gradient(180deg,#3b82f6,#a855f7,#ec4899);}
+.tl{position:relative;margin-bottom:35px;}
+.tl-dot{position:absolute;left:-35px;top:6px;width:13px;height:13px;border-radius:50%;border:3px solid #0a0a0a;}
+.d-b{background:#3b82f6;}.d-p{background:#a855f7;}.d-k{background:#ec4899;}.d-g{background:#22c55e;}
+.tl-card{background:#111;border:1px solid #1f2937;border-radius:12px;padding:22px;transition:all 0.3s;}
+.tl-card:hover{transform:translateY(-3px);}
+.tl-date{display:inline-block;font-size:11px;font-family:monospace;padding:4px 12px;border-radius:50px;background:rgba(59,130,246,0.1);color:#60a5fa;margin-bottom:8px;}
+.tl-card h3{font-size:16px;color:#fff;margin-bottom:6px;}
+.tl-card p{font-size:13px;color:#9ca3af;}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.ct-card{display:flex;align-items:center;gap:14px;background:#111;border:1px solid #1f2937;border-radius:12px;padding:18px;margin-bottom:18px;transition:all 0.3s;}
+.ct-card:hover{transform:translateY(-3px);border-color:#3b82f6;}
+.ct-ic{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0;}
+.ci-b{background:linear-gradient(135deg,#2563eb,#06b6d4);}
+.ci-g{background:linear-gradient(135deg,#16a34a,#10b981);}
+.ci-p{background:linear-gradient(135deg,#9333ea,#ec4899);}
+.ct-l{font-size:11px;color:#6b7280;}
+.ct-v{font-size:13.5px;color:#fff;font-weight:500;}
+.form{background:#111;border:1px solid #1f2937;border-radius:16px;padding:28px;}
+.form label{font-size:11px;color:#6b7280;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+.form input,.form textarea{width:100%;background:#1a1a1a;border:1px solid #262626;border-radius:10px;padding:13px 16px;color:#fff;font-size:13.5px;margin-bottom:16px;outline:none;font-family:Arial;transition:border 0.3s;}
+.form input:focus,.form textarea:focus{border-color:#3b82f6;}
+.form textarea{resize:none;height:100px;}
+.sub-btn{width:100%;padding:14px;background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.3s;}
+.sub-btn:hover{opacity:0.9;transform:translateY(-2px);}
+@media(max-width:768px){.contact{grid-template-columns:1fr;}}
+
+.banner{padding:70px 20px;background:linear-gradient(135deg,#2563eb,#9333ea,#ec4899);text-align:center;position:relative;overflow:hidden;}
+.banner::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.3);}
+.banner h2{font-size:30px;color:#fff;font-weight:800;line-height:1.4;position:relative;z-index:2;}
+.banner h2 u{text-decoration-color:#facc15;text-underline-offset:5px;}
+.banner p{color:rgba(255,255,255,0.9);margin-top:12px;font-size:16px;position:relative;z-index:2;}
+
+.footer{border-top:1px solid #1f2937;padding:30px 20px;background:#000;}
+.footer-inner{max-width:1150px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-left .ft-logo{font-size:22px;font-weight:800;}
+.footer-left p{font-size:11px;color:#4b5563;margin-top:3px;}
+.footer-mid p{font-size:12px;color:#4b5563;}
+.footer-right{display:flex;gap:12px;}
+.social{width:38px;height:38px;border-radius:10px;background:#111;border:1px solid #1f2937;display:flex;align-items:center;justify-content:center;color:#9ca3af;transition:all 0.3s;cursor:pointer;}
+.social:hover{background:linear-gradient(135deg,#3b82f6,#a855f7);color:#fff;border-color:transparent;transform:translateY(-3px);}
+@media(max-width:768px){.footer-inner{justify-content:center;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-inner">
+<a href="#home" class="logo"><span class="g-text">SS</span><span style="color:#6b7280">.</span></a>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#services">Services</a>
+<a href="#work">Work</a>
+<a href="#showreel">Showreel</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact" class="hire-btn">Hire Me</a>
+</div>
+</div>
+</nav>
+
+<header class="hero" id="home">
+<div class="hero-content">
+<div>
+<p class="tag-line">— Welcome to my world</p>
+<h1>Hi, I'm <span class="g-text">Shivam Shukla</span></h1>
+<p class="role">🎬 Video Editor &amp; ✍️ Copywriter</p>
+<p>I help small businesses & creators grow with scroll-stopping video edits and words that actually convert viewers into customers. Fast delivery. Affordable prices. Unlimited revisions.</p>
+<div class="btns">
+<a href="#contact" class="btn1"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+<a href="#showreel" class="btn2"><i class="fas fa-play"></i> View My Work</a>
+</div>
+<div class="stats">
+<div class="stat"><span class="num">1<sup style="font-size:14px;color:#60a5fa">st</sup></span><span class="lbl">Year Student</span></div>
+<div class="stat"><span class="num">2+</span><span class="lbl">Skills</span></div>
+<div class="stat"><span class="num">24h</span><span class="lbl">Fast Delivery</span></div>
+<div class="stat"><span class="num">∞</span><span class="lbl">Ambition</span></div>
+</div>
+</div>
+<div>
+<div class="circle">
+<div class="circle-in">
+<img src="https://i.ibb.co/7dsdVb6R/B612-20260708-172103-892.jpg" alt="Shivam Shukla">
+<div class="status"><span class="dot"></span><span>Available for work</span></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<section id="about">
+<div class="container">
+<div class="about">
+<div class="code-box">
+<p class="cm">// about_shivam.js</p>
+<p><span class="kw">const</span> <span class="vr">shivam</span> = {</p>
+<p>&nbsp;&nbsp;<span class="pr">name</span>: <span class="st">"Shivam Shukla"</span>,</p>
+<p>&nbsp;&nbsp;<span class="pr">location</span>: <span class="st">"Rewa, MP 📍"</span>,</p>
+<p>&nbsp;&nbsp;<span class="pr">status</span>: <span class="st">"1st Year Student"</span>,</p>
+<p>&nbsp;&nbsp;<span class="pr">mission</span>: <span class="st">"Help brands grow"</span>,</p>
+<p>&nbsp;&nbsp;<span class="pr">skills</span>: [</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"Video Editing 🎬"</span>,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">"Copywriting ✍️"</span>,</p>
+<p>&nbsp;&nbsp;],</p>
+<p>&nbsp;&nbsp;<span class="pr">motto</span>: <span class="st">"Hustle until your</span></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">idols become rivals 🔥"</span></p>
+<p>};</p>
+</div>
+<div class="about-txt">
+<p class="s-label" style="text-align:left">About Me</p>
+<h2>I Turn Ideas Into <span class="g-text">Engaging Content</span> 💫</h2>
+<p>Hey! I'm <strong>Shivam Shukla</strong>, a first-year student from <strong>Rewa, Madhya Pradesh</strong> on a mission to become financially independent through real digital skills.</p>
+<p>I specialize in <strong style="color:#60a5fa">video editing</strong> for Reels, Shorts & YouTube, and <strong style="color:#c084fc">copywriting</strong> for ads, captions & sales pages. Every project I take gets the same energy — fast, polished, and conversion-focused.</p>
+<p>Whether you're a small business, creator, or startup — I'll help your content stand out. 🚀</p>
+<div class="info-grid">
+<div class="info-c"><i class="fas fa-map-marker-alt" style="color:#60a5fa"></i><div class="il">Location</div><div class="iv">Rewa, MP</div></div>
+<div class="info-c"><i class="fas fa-graduation-cap" style="color:#c084fc"></i><div class="il">Education</div><div class="iv">1st Year</div></div>
+<div class="info-c"><i class="fas fa-language" style="color:#6ee7b7"></i><div class="il">Languages</div><div class="iv">Hindi, English</div></div>
+<div class="info-c"><i class="fas fa-bolt" style="color:#fde68a"></i><div class="il">Status</div><div class="iv">Open to Work</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<p class="s-label">What I Do</p>
+<h2 class="s-title">My <span class="g-text">Skills</span> &amp; Expertise</h2>
+<div class="skills">
+<div>
+<div class="sk-card">
+<div class="sk-head"><div class="sk-icon ic-p"><i class="fas fa-video"></i></div><div><div class="sk-name">Video Editing</div><div class="sk-sub">Creative Content</div></div></div>
+<p>Short &amp; long-form video content with smooth transitions, trendy effects, color grading &amp; storytelling that keeps viewers hooked.</p>
+<div class="tags"><span class="tg">Reels</span><span class="tg">YouTube</span><span class="tg">Shorts</span><span class="tg">Transitions</span></div>
+<div class="pbar"><div class="pfill f-p" style="width:45%"></div></div>
+</div>
+<div class="sk-card">
+<div class="sk-head"><div class="sk-icon ic-b"><i class="fas fa-pen-fancy"></i></div><div><div class="sk-name">Copywriting</div><div class="sk-sub">Words That Sell</div></div></div>
+<p>Persuasive copies for ads, landing pages, captions &amp; marketing materials designed to grab attention and drive action.</p>
+<div class="tags"><span class="tg">Ad Copy</span><span class="tg">Captions</span><span class="tg">Headlines</span><span class="tg">Scripts</span></div>
+<div class="pbar"><div class="pfill f-b" style="width:40%"></div></div>
+</div>
+</div>
+<div class="oth">
+<h3>Other Strengths 💪</h3>
+<div class="bar"><div class="bar-top"><span><i class="fas fa-lightbulb" style="color:#fde68a"></i> Creativity &amp; Ideas</span><span>80%</span></div><div class="pbar"><div class="pfill f-y" style="width:80%"></div></div></div>
+<div class="bar"><div class="bar-top"><span><i class="fas fa-comments" style="color:#6ee7b7"></i> Communication</span><span>75%</span></div><div class="pbar"><div class="pfill f-g" style="width:75%"></div></div></div>
+<div class="bar"><div class="bar-top"><span><i class="fas fa-rocket" style="color:#f87171"></i> Hustle &amp; Dedication</span><span>100%</span></div><div class="pbar"><div class="pfill f-r" style="width:100%"></div></div></div>
+<div class="bar"><div class="bar-top"><span><i class="fas fa-book" style="color:#c084fc"></i> Willingness to Learn</span><span>100%</span></div><div class="pbar"><div class="pfill f-v" style="width:100%"></div></div></div>
+<div class="tools">
+<h4><i class="fas fa-tools" style="color:#6b7280"></i> Tools I'm Learning</h4>
+<div class="tool-list">
+<div class="tool"><i class="fas fa-film" style="color:#c084fc"></i> CapCut</div>
+<div class="tool"><i class="fas fa-cut" style="color:#60a5fa"></i> DaVinci Resolve</div>
+<div class="tool"><i class="fab fa-figma" style="color:#fde68a"></i> Canva</div>
+<div class="tool"><i class="fas fa-file-alt" style="color:#6ee7b7"></i> Google Docs</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<p class="s-label">What I Offer</p>
+<h2 class="s-title">Premium <span class="g-text">Services</span></h2>
+<div class="services">
+<div class="srv">
+<div class="srv-ic si-p"><i class="fas fa-video"></i></div>
+<h3>Video Editing</h3>
+<p>Scroll-stopping edits for Reels, Shorts & YouTube that grow your audience.</p>
+<ul>
+<li><i class="fas fa-check"></i>Reels &amp; Shorts (up to 60s)</li>
+<li><i class="fas fa-check"></i>YouTube long-form edits</li>
+<li><i class="fas fa-check"></i>Color grading &amp; effects</li>
+<li><i class="fas fa-check"></i>Captions &amp; subtitles</li>
+</ul>
+</div>
+<div class="srv">
+<div class="srv-ic si-b"><i class="fas fa-pen-fancy"></i></div>
+<h3>Copywriting</h3>
+<p>Words that turn readers into customers and browsers into buyers.</p>
+<ul>
+<li><i class="fas fa-check"></i>Ad copy &amp; headlines</li>
+<li><i class="fas fa-check"></i>Social media captions</li>
+<li><i class="fas fa-check"></i>Sales page scripts</li>
+<li><i class="fas fa-check"></i>Email sequences</li>
+</ul>
+</div>
+<div class="srv">
+<div class="srv-ic si-o"><i class="fas fa-bullhorn"></i></div>
+<h3>Content Strategy</h3>
+<p>Strategic content planning to grow your brand and build a loyal audience.</p>
+<ul>
+<li><i class="fas fa-check"></i>Content calendar planning</li>
+<li><i class="fas fa-check"></i>Brand voice development</li>
+<li><i class="fas fa-check"></i>Growth strategy tips</li>
+<li><i class="fas fa-check"></i>Trend research</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+<p class="s-label">Portfolio</p>
+<h2 class="s-title">Recent <span class="g-text">Work</span></h2>
+<div class="work-grid">
+<div class="work-card">
+<div class="work-thumb" style="background:linear-gradient(135deg,#3b82f6,#a855f7);">
+<i class="fas fa-shopping-bag" style="position:absolute;top:20px;right:20px;font-size:24px;opacity:0.7;"></i>
+</div>
+<div class="work-info">
+<span class="tag">Video Editing</span>
+<h3>Instagram Reel for Clothing Brand</h3>
+<p>Created engaging 30-second product showcase reel with smooth transitions and trending audio.</p>
+<a href="#showreel">View Project →</a>
+</div>
+</div>
+<div class="work-card">
+<div class="work-thumb" style="background:linear-gradient(135deg,#9333ea,#ec4899);">
+<i class="fas fa-coffee" style="position:absolute;top:20px;right:20px;font-size:24px;opacity:0.7;"></i>
+</div>
+<div class="work-info">
+<span class="tag">Video Editing</span>
+<h3>Cafe Promotional Short</h3>
+<p>Made aesthetic 45-second short showcasing the cafe ambiance with color grading and music sync.</p>
+<a href="#showreel">View Project →</a>
+</div>
+</div>
+<div class="work-card">
+<div class="work-thumb" style="background:linear-gradient(135deg,#ea580c,#f59e0b);">
+<i class="fas fa-bullhorn" style="position:absolute;top:20px;right:20px;font-size:24px;opacity:0.7;"></i>
+</div>
+<div class="work-info">
+<span class="tag">Copywriting</span>
+<h3>Ad Campaign for Fitness Coach</h3>
+<p>Wrote 5 high-converting ad copies that increased lead generation by 3x for a fitness brand.</p>
+<a href="#contact">View Project →</a>
+</div>
+</div>
+<div class="work-card">
+<div class="work-thumb" style="background:linear-gradient(135deg,#22c55e,#06b6d4);">
+<i class="fas fa-mobile-alt" style="position:absolute;top:20px;right:20px;font-size:24px;opacity:0.7;"></i>
+</div>
+<div class="work-info">
+<span class="tag">Copywriting</span>
+<h3>App Landing Page Copy</h3>
+<p>Crafted persuasive landing page copy for a fintech app that boosted signups significantly.</p>
+<a href="#contact">View Project →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="showreel">
+<div class="container">
+<p class="s-label">Showreel</p>
+<h2 class="s-title">Watch Me <span class="g-text">In Action</span> 🎬</h2>
+<p style="text-align:center;color:#9ca3af;margin:-30px auto 40px;max-width:550px;font-size:14.5px;">A real video I edited — music sync, smooth transitions, sound effects & cinematic vibes. This is the quality you get when you work with me! 🔥</p>
+<div class="showreel-wrap">
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/IfI13WE3wT0" title="Shivam's Video Editing Showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<div class="play-badge"><i class="fas fa-play"></i></div>
+</div>
+<div class="showreel-features">
+<div class="sf-card"><i class="fas fa-music"></i> <span>Beat Sync</span></div>
+<div class="sf-card"><i class="fas fa-bolt"></i> <span>Fast Cuts</span></div>
+<div class="sf-card"><i class="fas fa-palette"></i> <span>Color Grade</span></div>
+<div class="sf-card"><i class="fas fa-volume-up"></i> <span>SFX</span></div>
+</div>
+<a href="https://youtu.be/IfI13WE3wT0" target="_blank" class="showreel-btn"><i class="fab fa-youtube"></i> Watch on YouTube</a>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<p class="s-label">Pricing</p>
+<h2 class="s-title">Simple, <span class="g-text">Transparent</span> Pricing</h2>
+<div class="price-grid">
+<div class="price-card">
+<h3>Starter</h3>
+<div class="price">₹499<span>/video</span></div>
+<p class="price-desc">Perfect for testing my work</p>
+<ul>
+<li><i class="fas fa-check"></i>1 Reel/Short (up to 60s)</li>
+<li><i class="fas fa-check"></i>Basic transitions</li>
+<li><i class="fas fa-check"></i>Music sync</li>
+<li><i class="fas fa-check"></i>1 revision</li>
+<li><i class="fas fa-check"></i>24-hour delivery</li>
+</ul>
+<a href="#contact" class="price-btn">Get Started</a>
+</div>
+<div class="price-card popular">
+<span class="badge">⭐ MOST POPULAR</span>
+<h3>Pro</h3>
+<div class="price">₹1,499<span>/pack</span></div>
+<p class="price-desc">Best value for creators</p>
+<ul>
+<li><i class="fas fa-check"></i>3 Reels/Shorts</li>
+<li><i class="fas fa-check"></i>Advanced transitions</li>
+<li><i class="fas fa-check"></i>Color grading</li>
+<li><i class="fas fa-check"></i>Thumbnail design</li>
+<li><i class="fas fa-check"></i>3 revisions</li>
+<li><i class="fas fa-check"></i>Priority delivery</li>
+</ul>
+<a href="#contact" class="price-btn">Get Started</a>
+</div>
+<div class="price-card">
+<h3>Premium</h3>
+<div class="price">₹2,999<span>/pack</span></div>
+<p class="price-desc">Full content solution</p>
+<ul>
+<li><i class="fas fa-check"></i>5 Reels + 1 YouTube video</li>
+<li><i class="fas fa-check"></i>Premium effects &amp; grading</li>
+<li><i class="fas fa-check"></i>Script writing included</li>
+<li><i class="fas fa-check"></i>Captions &amp; SEO</li>
+<li><i class="fas fa-check"></i>Unlimited revisions</li>
+<li><i class="fas fa-check"></i>1 month support</li>
+</ul>
+<a href="#contact" class="price-btn">Get Started</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="why">
+<div class="container">
+<p class="s-label">Why Me</p>
+<h2 class="s-title">Why Clients <span class="g-text">Choose Me</span></h2>
+<div class="why-grid">
+<div class="why-card">
+<div class="why-icon"><i class="fas fa-bolt"></i></div>
+<h4>Fast Delivery</h4>
+<p>Most projects done within 24-48 hours</p>
+</div>
+<div class="why-card">
+<div class="why-icon"><i class="fas fa-redo"></i></div>
+<h4>Unlimited Revisions</h4>
+<p>Until you're 100% satisfied</p>
+</div>
+<div class="why-card">
+<div class="why-icon"><i class="fas fa-wallet"></i></div>
+<h4>Affordable Prices</h4>
+<p>Student-friendly rates, premium quality</p>
+</div>
+<div class="why-card">
+<div class="why-icon"><i class="fas fa-headset"></i></div>
+<h4>24/7 Support</h4>
+<p>Always available on WhatsApp &amp; email</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="testimonials">
+<div class="container">
+<p class="s-label">Client Love</p>
+<h2 class="s-title">What Clients <span class="g-text">Say</span></h2>
+<div class="test-grid">
+<div class="test-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"Shivam delivered amazing reels for my clothing brand! The quality was way better than I expected at this price. Will definitely work with him again."</p>
+<div class="test-author">
+<div class="author-av">R</div>
+<div><strong>Rahul S.</strong><span>Clothing Brand Owner · Instagram</span></div>
+</div>
+</div>
+<div class="test-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"I needed urgent ad copy for my fitness coaching launch. Shivam delivered scroll-stopping copy in just 6 hours. My conversions doubled! Highly recommend."</p>
+<div class="test-author">
+<div class="author-av">P</div>
+<div><strong>Priya M.</strong><span>Fitness Coach · Mumbai</span></div>
+</div>
+</div>
+</div>
+<p style="text-align:center;margin-top:30px;color:#6b7280;font-size:13px;">💡 Sample testimonials — will be replaced with real client reviews!</p>
+</div>
+</section>
+
+<section id="journey">
+<div class="container">
+<p class="s-label">My Journey</p>
+<h2 class="s-title">The <span class="g-text">Road</span> So Far</h2>
+<div class="timeline">
+<div class="tl"><div class="tl-dot d-b"></div><div class="tl-card"><span class="tl-date">2026 - Present</span><h3>🎓 Started College</h3><p>Began college while building digital skills for financial independence.</p></div></div>
+<div class="tl"><div class="tl-dot d-p"></div><div class="tl-card"><span class="tl-date">2026</span><h3>🎬 Started Video Editing</h3><p>Learning transitions, effects, color grading, and storytelling techniques.</p></div></div>
+<div class="tl"><div class="tl-dot d-k"></div><div class="tl-card"><span class="tl-date">2026</span><h3>✍️ Discovered Copywriting</h3><p>Realized the power of words. Started learning persuasive writing & ad copy.</p></div></div>
+<div class="tl"><div class="tl-dot d-g"></div><div class="tl-card"><span class="tl-date">Coming Soon 🔥</span><h3>🚀 Getting Clients & Building Brand</h3><p>Next: Start freelancing, work with real clients, and grow my agency!</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<p class="s-label">Get In Touch</p>
+<h2 class="s-title">Let's <span class="g-text">Work Together</span> 🤝</h2>
+<p style="text-align:center;color:#9ca3af;margin:-30px auto 40px;max-width:520px;font-size:14.5px;">Have a project in mind? Drop me a message and I'll get back within 24 hours!</p>
+<div class="contact">
+<div>
+<a href="mailto:shivamshukla242007@gmail.com" class="ct-card">
+<div class="ct-ic ci-b"><i class="fas fa-envelope"></i></div>
+<div><div class="ct-l">Email Me</div><div class="ct-v">shivamshukla242007@gmail.com</div></div>
+</a>
+<a href="tel:+91887832" class="ct-card">
+<div class="ct-ic ci-g"><i class="fas fa-phone"></i></div>
+<div><div class="ct-l">Call / WhatsApp</div><div class="ct-v">+91 887832XXXX</div></div>
+</a>
+<div class="ct-card">
+<div class="ct-ic ci-p"><i class="fas fa-map-marker-alt"></i></div>
+<div><div class="ct-l">Based In</div><div class="ct-v">Rewa, Madhya Pradesh, India</div></div>
+</div>
+<div class="ct-card">
+<div class="ct-ic ci-b"><i class="fas fa-clock"></i></div>
+<div><div class="ct-l">Response Time</div><div class="ct-v">Within 24 hours ⚡</div></div>
+</div>
+</div>
+<div>
+<form class="form" onsubmit="alert('🎉 Thanks for reaching out!\n\nI will get back to you within 24 hours at:\nshivamshukla242007@gmail.com');return false;">
+<label>Your Name</label>
+<input type="text" placeholder="John Doe" required>
+<label>Your Email</label>
+<input type="email" placeholder="john@example.com" required>
+<label>What do you need?</label>
+<input type="text" placeholder="e.g., 3 Instagram Reels for my brand">
+<label>Tell me more</label>
+<textarea placeholder="Project details, deadline, budget..."></textarea>
+<button type="submit" class="sub-btn">Send Message <i class="fas fa-arrow-right" style="margin-left:8px"></i></button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<div class="banner">
+<h2>"The best time to start was yesterday.<br>The second best time is <u>NOW</u>."</h2>
+<p>— Let's build something amazing together! 🔥</p>
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-left">
+<div class="ft-logo"><span class="g-text">SS.</span></div>
+<p>From Rewa, MP 🇮🇳 · Available Worldwide</p>
+</div>
+<div class="footer-mid">
+<p>&copy; 2026 Shivam Shukla. All rights reserved.</p>
+<p>Built with ❤️ &amp; Hustle</p>
+</div>
+<div class="footer-right">
+<a href="mailto:shivamshukla242007@gmail.com" class="social"><i class="fas fa-envelope"></i></a>
+<a href="#" class="social"><i class="fab fa-instagram"></i></a>
+<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" class="social"><i class="fab fa-youtube"></i></a>
+<a href="#" class="social"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
